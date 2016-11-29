@@ -13,11 +13,14 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://use.fontawesome.com/77c5765854.js"></script>
+		
 
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
-
+		<!-- back-to-top -->
+				<a href="#header" class="back-to-top" style="display: inline;">
+					<i class="fa fa-arrow-circle-up"></i></a>
 			<!-- Header -->
 				<div id="header">
 
@@ -36,30 +39,52 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-							<li>
-									<a href="#"><i class="fa fa-bars" aria-hidden="true"> </i></a>
+								<li><a href="index.html">Home</a>
 									<ul>
-										<li><a href="#">Project Brief</a></li>
-										<li><a href="#">Features</a></li>
-										<li><a href="#">Timeline</a></li>
-								<li><a href="index.html">Home</a></li>
-								
-										<!-- <li>
-											<a href="#">And a submenu &hellip;</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-										</li> -->
-										<li><a href="#">Team</a></li>
+										<li><a href="#projectBrief">Project Brief</a></li>
+										<li><a href="#features">Features</a></li>
+<!-- 										<li><a href="#timeline">Timeline</a></li>
+ -->										<li><a href="#team">Team</a></li>
 									</ul>
 								</li>
-								<li><a href="left-sidebar.html">Overview</a></li>
-								<li><a href="right-sidebar.html">Research</a></li>
-								<li><a href="no-sidebar.html">Testing</a></li>
-								<li><a href="no-sidebar.html">Management</a></li>
+								<li><a href="overview.html">Overview</a>
+									<ul>
+										<li><a href="overview.html#background">Background</a></li>
+										<li><a href="overview.html#clients">The clients</a></li>
+										<li><a href="overview.htmltime#initialProblem">Initial Problem</a></li>
+									</ul></li>
+								<li><a href="requirement.html">Requirements</a>
+									<ul>
+										<li><a href="requirement.html#requirement">Requirements</a></li>
+										<li><a href="requirement.html#usecases">Use Cases</a></li>
+									</ul>
+								</li>
+								<li><a href="research.html">Research</a>
+									<ul>
+										<li><a href="research.html#competitors">Competitors</a></li>
+										<li><a href="research.html#Technologies">Technology</a></li>
+										<li><a href="research.html#decision">Decisions</a></li>
+										<li><a href="research.html#hciAnalysis">HCI Analysis</a></li>
+										<li><a href="research.html#resources">Resource</a></li>
+									</ul>
+								</li>
+								<li><a href="management.html">Management</a>
+									<ul>
+										<li><a href="management.html#ganttChart">Gantt Chart</a></li>
+										<li><a href="management.html#bi-weeklyReport">Bi-weekly Report</a></li>
+										<li><a href="management.html#meetings">Meeting Minutes</a></li>
+									<ul>
+								</li>
+								<li><a href="development.html">Development</a>
+									<ul>
+										<li><a href="development.html#prototypes">Prototypes</a></li>
+										<li><a href="development.html#experiments">Experiments</a></li>
+										<li><a href="development.html#technocalAchievement">Technical Achievement</a></li>
+										<li><a href="development.html#gitHub">GitHub Repository</a></li>
+										<li><a href="development.html#testing">Testing Strategies</a></li>
+										<li><a href="development.html#architectural">Architechtural Diagram</a></li>
+									</ul>
+								</li>
 							</ul>
 						</nav>
 
@@ -68,7 +93,7 @@
 			<!-- Banner -->
 				<section id="banner">
 					<header>
-						<h2>Project Brief</h2>
+						<h2 id="projectBrief">Project Brief</h2>
 						<p>
 							We are developing a mobile app for NHS that targets to move towards a service that better meets every person's’ individual health and wellbeing needs.
                This is intended to be done by the users through self-rating on a daily basis and setting up daily/weekly personal goals.
@@ -77,32 +102,32 @@
 					</header>
 				</section>
 
-			<!-- Carousel -->
+			<!-- Carousel features -->
 				<section class="carousel">
-					<div class="reel">
+					<div class="reel" id="features">
 
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+								<h3><a href="#">Self-Assessment</a></h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+							<p>The application allows each user to rate themselves regularly and setup up goals on a daily/weekly basis.</p>
 						</article>
 
 						<article>
 							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">Fermentum sagittis proin</a></h3>
+								<h3><a href="#">Progress Evaluation</a></h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+							<p>The user is able to see his/her data in a graphical way and thus evaluate the progress over time.</p>
 						</article>
 
 						<article>
 							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+								<h3><a href="#">Data Confidentiality</a></h3>
 							</header>
-							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+							<p>All the users' data will be encrypted to ensure that confidentiality is maintained.</p>
 						</article>
 
 						<article>
@@ -165,12 +190,12 @@
 				</section>
 
 			<!-- Main -->
-				<div class="wrapper style2">
+			<!-- 	<div class="wrapper style2">
 
 					<article id="main" class="container special">
 						<a href="#" class="image featured"></a>
 						<header>
-							<h2><a href="#">Features</a></h2>
+							<h2><a href="#timeline">Timeline</a></h2>
 						</header>
 						<div>
 						    <div class="text-center">
@@ -206,12 +231,12 @@
                    	</div>
 					</article>
 
-				</div>
+				</div> -->
 
-			<!-- Features -->
+			<!-- team member -->
 				<div class="wrapper style1">
 
-					<section id="features" class="container special">
+					<section id="team" class="container special">
 						<header>
 							<h2>Our Amazing Team</h2>
 						</header>
@@ -255,17 +280,12 @@
 
 								<!-- Contact -->
 									<section class="contact">
-										<header>
-											<h3>Nisl turpis nascetur interdum?</h3>
-										</header>
-										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+										
 										<ul class="icons">
-											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+											<li><a href="https://twitter.com/" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+											<li><a href="https://www.facebook.com/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+											<li><a href="https://www.linkedin.com/" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
+											<li><a href="https://github.com/" class="icon fa-github"><span class="label">GitHub</span></a></li>
 										</ul>
 									</section>
 
