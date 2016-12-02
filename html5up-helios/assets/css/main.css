@@ -67,7 +67,7 @@
 
 .img-circle {
 	border-radius: 50%;
-	
+
 }
 .text-muted {
   color: #777777;
@@ -1976,7 +1976,7 @@
 		form select:focus,
 		form textarea:focus {
 			background: #fff;
-			border-color: #df7366;
+			border-color: #000;
 		}
 
 	form input[type="text"],

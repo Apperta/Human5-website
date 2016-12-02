@@ -1,0 +1,19 @@
+.headTableDes
+{
+    background-color: #6d9eeb!important;
+    color: #fafafa!important;
+    font-weight: bold;
+    border-color: black!important;
+}
+
+.table-bordered td, .table-bordered th{
+    border-color: black !important;
+}
+
+.topTable
+{
+padding-top: 0pt;
+padding-bottom: 0pt;
+line-height: 1.0;
+text-align: center;
+}
