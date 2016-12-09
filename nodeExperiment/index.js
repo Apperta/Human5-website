@@ -26,7 +26,12 @@ app.get('/',function(req, res)
 });
 
 
-app.get('/',function(req, res)
+app.get('/test.html',function(req, res)
+{
+        res.sendFile('www/index.html', { root : __dirname });
+});
+
+app.get('/test',function(req, res)
 {
         res.sendFile('www/index.html', { root : __dirname });
 });
