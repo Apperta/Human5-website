@@ -18,7 +18,89 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/www'));
 app.use(cors());
 
+var connection  = mysql.createConnection(
+{
+        connectionLimit : 100,
+        host:      'localhost',
+        port:      '3306',
+        user:      'root',
+        password:  'root',
+        database:  'experiment',
+        debug:      false,
+        multipleStatements: true
+})
+connection.connect();
 
+/*
+submit form 
+info... 
+name...
+
+submit 
+me/group
+local/server
+
+done
+refresh table 
+*/
+
+function insert ( req, res)
+{
+        var values =
+        {
+                info: req.query.info,
+                name: req.query.name,
+                value: req.query.value,
+        }
+
+        connection.query("insert into info (info, name, privacy) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value  "\") ", function ( err, rows)
+        {
+        		console.log(req.body);
+                if(err)
+                {
+                        res.json({"Response": "Failed to add"});
+                }
+                else
+                {
+                        res.json('{"id" : ' + rows.insertId + '}');
+                }
+        });
+}
+
+
+
+function getAll ( req, res)
+{
+
+        connection.query("select * from info", function ( err, rows)
+        {
+        		console.log(req.body);
+                if(err)
+                {
+                        res.json({"Response": "Failed to read"});
+                }
+                else
+                {
+                        res.json(rows);
+                }
+        });
+}
+
+
+
+
+
+
+app.get('/getAll',function(req, res)
+{
+        getAll( req, res);
+});
+
+
+app.get('/insert',function(req, res)
+{
+        insert( req, res);
+});
 
 app.get('/',function(req, res)
 {
