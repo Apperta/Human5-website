@@ -1,5 +1,5 @@
 /* script for index.html */
-
+var countlocalcomm;
 $(document).ready(function() 
 {
 	console.log("Document ready");
@@ -16,10 +16,17 @@ $(document).ready(function()
 	$("#notCheckedStorage").hide();
 	$("#notCheckedRange").hide();
 	
-    // var username = sessionStorage.getItem("username");
- 
 
-        getDataLocal();
+    $("#loadData").click(function()
+    {
+      getDataLocal();
+    })
+    $("#loadData2").click(function()
+    {
+      getDataServer();
+    })
+
+   
         $("#formButton").click(function()
     {
     	// console.log("inside form button");
@@ -55,7 +62,6 @@ $(document).ready(function()
             $.get("http://188.166.144.42:8080/insert?info="+$("#countrySearch").val()+"&name=" + $("#nameSearch").val() + "&value=" + groups).done(function() 
             {
 				       console.log("inside post done!");
-               getDataServer();
            })
 
         }
@@ -64,11 +70,10 @@ $(document).ready(function()
        {
         count = localStorage.getItem("count");
 
-       	localStorage.setItem("info" + count,$("#countrySearch"));
-        localStorage.setItem("name" + count,$("#nameSearch"));
+       	localStorage.setItem("info" + count,$("#countrySearch").val());
+        localStorage.setItem("name" + count,$("#nameSearch").val());
         localStorage.setItem("groups" + count,groups);
         localStorage.setItem("count", parseInt(count)+1);
-        getDataServer();
        }
     })
 
@@ -84,13 +89,17 @@ function getDataLocal()
       var count = localStorage.getItem("count");
       for (var i = 0; i < count; i++) 
       {
-          var banner = $("#template>.banner").clone(true, true);        
+          var banner = $("#template>.banner").clone(true, true);  
+          console.log(localStorage.getItem("info" + i));
+          console.log(localStorage.getItem("name" + i));
+          console.log(localStorage.getItem("groups" + i));      
           banner.find(".infoForFill").html(localStorage.getItem("info" + i));
           banner.find("#usernameForFill").html(localStorage.getItem("name" + i));
           banner.find("#goalForFill").html(localStorage.getItem("groups" + i));
           banner.find("#sourceForFill").html("local");
           $(".results-search").append(banner);
       }
+
 }
 
 
