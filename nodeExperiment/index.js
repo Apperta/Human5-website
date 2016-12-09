@@ -48,12 +48,12 @@ function insert ( req, res)
 {
         var values =
         {
-                info: req.body.info,
-                name: req.body.name,
-                value: req.body.value,
+                info: req.query.info,
+                name: req.query.name,
+                value: req.query.value,
         }
                 console.log("result from insert");
-        		console.log(req.body);
+        		console.log(req.query);
 
         connection.query("insert into info (info, name, privacy) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value + "\") ", function ( err, rows)
         {
@@ -101,7 +101,7 @@ app.get('/getAll',function(req, res)
 });
 
 
-app.post('/insert',function(req, res)
+app.get('/insert',function(req, res)
 {
         insert( req, res);
 });

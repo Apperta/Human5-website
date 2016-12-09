@@ -57,7 +57,7 @@ $(document).ready(function()
         }
         else
         {
-            $.post("http://138.68.152.49:3000/airlines/insertRating", obj).done(function() 
+            $.get("http://138.68.152.49:3000/airlines/insertRating", obj).done(function() 
             {
 				        console.log("inside post done!");
               //  $.get("http://188.166.144.42:8080/getAll").done(function(dataRecieved) 
