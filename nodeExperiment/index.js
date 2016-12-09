@@ -55,7 +55,7 @@ function insert ( req, res)
                 console.log("result from insert");
         		console.log(req.query);
 
-        connection.query("insert into info (info, name, privacy) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value + "\") ", function ( err, rows)
+        connection.query("insert into info (info, name, groups) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value + "\") ", function ( err, rows)
         {
 
                 if(err)
