@@ -53,8 +53,10 @@ function insert ( req, res)
                 value: req.query.value,
         }
 
-        connection.query("insert into info (info, name, privacy) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value  "\") ", function ( err, rows)
+        connection.query("insert into info (info, name, privacy) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value + "\") ", function ( err, rows)
         {
+        		console.log("result from insert");
+        		console.log(req.query);
         		console.log(req.body);
                 if(err)
                 {
@@ -64,7 +66,7 @@ function insert ( req, res)
                 {
                         res.json('{"id" : ' + rows.insertId + '}');
                 }
-        });
+        })
 }
 
 
@@ -74,6 +76,8 @@ function getAll ( req, res)
 
         connection.query("select * from info", function ( err, rows)
         {
+        		console.log("result from select");
+        		console.log(req.query);
         		console.log(req.body);
                 if(err)
                 {
