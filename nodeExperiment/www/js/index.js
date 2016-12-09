@@ -2,8 +2,11 @@
 
 $(document).ready(function() 
 {
+	console.log("Document ready");
 	$("#template").hide();
 	$("#notCheckedStorage").hide();
+	$("#notCheckedRange").hide();
+	
     // var username = sessionStorage.getItem("username");
     // if (username != 0 && username != null) {
     //     $("#loginLabelUser").html(username);
@@ -22,6 +25,7 @@ $(document).ready(function()
     $.get("http://188.166.144.42:8080/getAll")
         .done(function(dataRecieved) {
             $(".results-search").html("");
+            console.log(dataRecieved);
             for (var i = 0; i < dataRecieved.length; i++) {
                 var banner = $("#template>.banner").clone(true, true);                  
                 banner.find(".commentServer").html(dataRecieved[i].adText);
@@ -29,12 +33,20 @@ $(document).ready(function()
             }
         })
 
-})
 
-function bindEvents(optionsLogin, optionsRegister) {
-
-    $("#formButton").click(function()
+        $("#formButton").click(function()
     {
+    	// console.log("inside form button");
+          
+	       var obj = 
+	       {
+	       	info: $("#countrySearch").val(),
+	       	name: $("#nameSearch").val(),
+	       	groups:""
+	       }
+         console.log($("#nameSearch").val());
+         console.log(obj);
+       
        var x = document.getElementById("local").checked;
        var y = document.getElementById("server").checked;
        if( x == false)
@@ -42,20 +54,41 @@ function bindEvents(optionsLogin, optionsRegister) {
         if(y == false)
         {
             $("#notCheckedStorage").show();
-            event.preventDefault();
         }
         else
         {
-           $("#searchForm").attr("action","http://188.166.144.42:8080/insert");
+            $.post("http://138.68.152.49:3000/airlines/insertRating", obj).done(function() 
+            {
+				        console.log("inside post done!");
+              //  $.get("http://188.166.144.42:8080/getAll").done(function(dataRecieved) 
+              //   {
+			           //  $(".results-search").html("");
+			           //  console.log(dataRecieved);
+			           //  for (var i = 0; i < dataRecieved.length; i++) 
+			           //  {
+			           //      var banner = $("#template>.banner").clone(true, true);                  
+			           //      banner.find(".commentServer").html(dataRecieved[i].adText);
+			           //      $(".results-search").append(banner);
+			           //  }
+	             // })
+           })
 
         }
        }
        else
        {
-             $("#searchForm").attr("action","http://138.68.152.49:3000/airlines.html");
-             event.preventDefault();
+       	alert("you choosed locally");
        }
     })
+
+
+        
+
+})
+
+function bindEvents() {
+
+
 }
 
 

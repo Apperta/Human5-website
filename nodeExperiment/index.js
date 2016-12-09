@@ -48,16 +48,16 @@ function insert ( req, res)
 {
         var values =
         {
-                info: req.query.info,
-                name: req.query.name,
-                value: req.query.value,
+                info: req.body.info,
+                name: req.body.name,
+                value: req.body.value,
         }
+                console.log("result from insert");
+        		console.log(req.body);
 
         connection.query("insert into info (info, name, privacy) values (\""+ values.info + "\",\"" + values.name + "\",\""+ values.value + "\") ", function ( err, rows)
         {
-        		console.log("result from insert");
-        		console.log(req.query);
-        		console.log(req.body);
+
                 if(err)
                 {
                         res.json({"Response": "Failed to add"});
@@ -77,7 +77,6 @@ function getAll ( req, res)
         connection.query("select * from info", function ( err, rows)
         {
         		console.log("result from select");
-        		console.log(req.query);
         		console.log(req.body);
                 if(err)
                 {
@@ -95,13 +94,13 @@ function getAll ( req, res)
 
 
 
-app.get('/getAll',function(req, res)
+app.post('/getAll',function(req, res)
 {
         getAll( req, res);
 });
 
 
-app.get('/insert',function(req, res)
+app.post('/insert',function(req, res)
 {
         insert( req, res);
 });
