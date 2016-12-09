@@ -1,27 +1,24 @@
 <!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>System Engineering Testing - Team 34</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <script src="http://malsup.github.com/jquery.form.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="js/index.js"></script>
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
 	</head>
 	<body>
 
-			<div >
+
+			<div class="w3-row w3-center w3-card-12">
                     <br>
-                    <label>Name: &nbsp;&nbsp;</label>
+                    <label class="w3-center">Name: &nbsp;&nbsp;</label>
                     <input size="27" type="text" name="name" id="nameSearch" placeholder="Enter your name..." />
                     <br>
                     <label>Info:  &nbsp;&nbsp; &nbsp;&nbsp;</label>
@@ -33,17 +30,23 @@
                     <div class="w3-center" id="notCheckedRange"><p><br><em> You have to choose between personal or group!</em></p></div>
                     <input type="radio" name="range" id="me"> &nbsp;&nbsp;Me<br>
                     <input type="radio" name="range" id="group"> Group<br>
-                    <button id="formButton" >Submit</button>
+                    <button id="formButton">Submit</button>
             </div>
 
-            <div class="result-search">
+            <div class="results-search">
             </div>
 
 
               <div data-role="template" id="template">
-        		<div class="banner w3-panel">           
-                    <textarea readonly class="commentServer" maxlength="500" style="width:90%;height:5em;" placeholder="No comment left!" ></textarea> <br>
-                </div>                 
+		        <div class="banner w3-panel">
+		            <div class="w3-row w3-card-12">           
+                    <br>
+                    <textarea readonly class="infoForFill w3-center" maxlength="500" style="width:90%;height:5em;" placeholder="No comment left!" ></textarea> <br>
+                    <h4>Review by <span id="usernameForFill"></span></h4>
+                    <h4>Groups goal: <span id="goalForFill"></span></h4>
+                    <h4>Source is <span id="sourceForFill"></span></h4><br><br>
+                	 </div>         
+                </div>        
         	</div>
 
 	</body>
