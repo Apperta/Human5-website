@@ -73,11 +73,12 @@ function insert ( req, res)
 
 function getAll ( req, res)
 {
+        console.log("result from select");
+		console.log(req.query);
 
         connection.query("select * from info", function ( err, rows)
         {
-        		console.log("result from select");
-        		console.log(req.body);
+
                 if(err)
                 {
                         res.json({"Response": "Failed to read"});
@@ -94,7 +95,7 @@ function getAll ( req, res)
 
 
 
-app.post('/getAll',function(req, res)
+app.get('/getAll',function(req, res)
 {
         getAll( req, res);
 });
