@@ -15,14 +15,14 @@ var server = http.createServer(app);
 // var m = require("./mail.js");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/planeadvisor'));
+app.use(express.static(__dirname + '/www'));
 app.use(cors());
 
 
 
 app.get('/',function(req, res)
 {
-        res.sendFile('../html5up-helios/index.html', { root : __dirname });
+        res.sendFile('index.html', { root : '/NHS-IBM-Genomics/html5up-helios/' });
 });
 
 
