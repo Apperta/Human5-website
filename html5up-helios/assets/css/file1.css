@@ -17,3 +17,7 @@ padding-bottom: 0pt;
 line-height: 1.0;
 text-align: center;
 }
+
+ul.a {
+list-style-type: circle;
+}
