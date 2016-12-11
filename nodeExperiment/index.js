@@ -108,7 +108,7 @@ app.get('/insert',function(req, res)
 
 app.get('/',function(req, res)
 {
-        res.sendFile('index.html', { root : '/NHS-IBM-Genomics/html5up-helios/' });
+        res.sendFile('index.html', { root : '..p\]/NHS-IBM-Genomics/html5up-helios/' });
 });
 
 
