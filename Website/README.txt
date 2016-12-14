@@ -1,4 +1,64 @@
-Helios by HTML5 UP
+The Human Five website consists of 6 pages:
+	Home
+		*Project Brief
+		*Features
+		*Timeline
+		*Our Team
+	Overview
+		*Background
+		*Our Client
+		*Needs
+	Requirements
+		*Moscow Requirements
+		*Functional Requirements 
+		*Non-Functional Requirements
+		*Use Cases
+	Research
+		*Competitors
+		*Mobile Application Platforms
+		*Technology
+		*Framework
+		*Decisions
+		*HCI Analysis
+		*Resource
+	Development
+		*Wireframes + Prototypes
+		*Experiment log
+		*Github Repository
+		*Testing Strategies
+	Management
+		*Gantt Chart
+		*Bi-weekly Report
+		*Meeting Minutes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Template based on Helios by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
